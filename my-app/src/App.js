@@ -11,7 +11,7 @@ class App extends React.Component {
                 <div>
                     <div>123</div>  
                     <Route path="/article/:id" component={Post}/> 
-                    <Route path="/category/:id" component={Post}/> 
+                    {/* <Route path="/category/:id" component={Post}/>  */}
                 </div>
             </BrowserRouter>
         )

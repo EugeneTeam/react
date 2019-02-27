@@ -10,17 +10,13 @@ class Post extends React.Component {
     }
   
     componentWillMount() {
-      let head = new Headers({
-         'Access-Control-Allow-Origin':'*',
-         'Content-Type': 'multipart/form-data'
-      });
+      let head = new Headers();
       let postId = this.props.match.params.id;
 
       var myInit = { method: 'GET',
                headers: head,
-               mode: 'cors',
-               cache: 'default' };
-      console.log(`id = ${postId}`);
+               mode: 'cors'};
+
       fetch(`http://localhost:4000/article/${postId}`, myInit)
         .then(response => response.json())
         .then(data => this.setState({ data }));
@@ -29,7 +25,7 @@ class Post extends React.Component {
    render() {
       return(
          <div>
-            {this.state.data}
+            {console.log(this.state.data)}
          </div>
       )
    }
