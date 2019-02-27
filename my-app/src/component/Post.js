@@ -28,16 +28,10 @@ class Post extends React.Component {
             <h1>Loading...</h1>
          </div>
       )
-      const TodoComponent = {
-         width: "300px",
-         height: "300px",
-         background: "url(../../../../public" + this.state.data.image_url + ")",
-       }
       return(
          <div>
-            <div style={TodoComponent}></div>
-            <span className='title'>{this.state.data.title}</span>
-            <br></br>
+            <img src={this.state.data.image_url} className='image'></img>
+            <div className='title'>{this.state.data.title}</div>
             <div className='text'>{this.state.data.text}</div>
          </div>
       )
