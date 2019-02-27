@@ -9,7 +9,6 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <div>123</div>  
                     <Route path="/article/:id" component={Post}/> 
                     {/* <Route path="/category/:id" component={Post}/>  */}
                 </div>

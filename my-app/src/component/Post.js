@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-
+import './Post.css'
 class Post extends React.Component {
-   constructor(props) {
-      super(props);
+   constructor() {
+      super();
   
       this.state = {
         data: null,
@@ -23,9 +23,23 @@ class Post extends React.Component {
     }
 
    render() {
+      if(!this.state.data) return (
+         <div>
+            <h1>Loading...</h1>
+         </div>
+      )
+      const style = {
+         image: {
+            background: `url(.${this.state.data.image_url})`
+         }
+      }
+
       return(
          <div>
-            {console.log(this.state.data)}
+            <div ></div>
+            <span className='title'>{this.state.data.title}</span>
+            <br></br>
+            <div className='text'>{this.state.data.text}</div>
          </div>
       )
    }
