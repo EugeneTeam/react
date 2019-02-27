@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import './Post.css'
+
 class Post extends React.Component {
    constructor() {
       super();
-  
       this.state = {
         data: null,
       };
@@ -28,15 +28,14 @@ class Post extends React.Component {
             <h1>Loading...</h1>
          </div>
       )
-      const style = {
-         image: {
-            background: `url(.${this.state.data.image_url})`
-         }
-      }
-
+      const TodoComponent = {
+         width: "300px",
+         height: "300px",
+         background: "url(../../../../public" + this.state.data.image_url + ")",
+       }
       return(
          <div>
-            <div ></div>
+            <div style={TodoComponent}></div>
             <span className='title'>{this.state.data.title}</span>
             <br></br>
             <div className='text'>{this.state.data.text}</div>
