@@ -3,23 +3,13 @@ import './Main.css'
 import FirstPost from './FirstPost'
 import './FirstPost.css'
 import Post from './Post'
+import Menu from './Menu'
 class Main extends React.Component {
 
     render() {
         return(
             <div>
-                <div className="top">
-                    <div className="logo">MINIMĂØ
-                    </div>
-                    <div className="menu">
-                        <ul>
-                            <li><a href="/lifestyle">Lifestyle</a></li>
-                            <li><a href="/photodiary">Photodiary</a></li>
-                            <li><a href="/music">Music</a></li>
-                            <li><a href="/travel">Travel</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <Menu></Menu>
                 <FirstPost></FirstPost>
                 <div className='leavtext'>LEAVE A COMMENT</div>
                 <div className='order'>
