@@ -1,0 +1,26 @@
+.fimage {
+    width: 1060px;
+    margin-left: 70px;
+    margin-bottom: 100px;
+}
+.mar {
+    margin-left: 150px;
+}
+.ftext {
+    font-family: 'Playfair Display';
+    font-size: 14px;
+    width: 900px;
+    line-height: 22px;
+}
+.ftype {
+    font-family: 'Playfair Display';
+    font-size: 14px;
+    color: #C2B9AC;
+    margin-bottom: 26px;
+}
+.ftitle {
+    font-family: 'Playfair Display';
+    font-size: 30px;
+    color: #C2B9AC;
+    margin-bottom: 35px;
+}

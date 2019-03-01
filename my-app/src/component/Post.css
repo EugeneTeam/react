@@ -1,6 +1,12 @@
-.title  {
-    font-family: 'Ubuntu';
+.type {
+    font-family: 'Playfair Display';
     font-size: 14px;
+    color: #C2B9AC;
+    margin-bottom: 20px;
+}
+.title  {
+    font-family: 'Playfair Display';
+    font-size: 30px;
     color: #C2B9AC;
 }
 .text {
@@ -8,11 +14,19 @@
     font-family: 'Playfair Display';
     font-size: 14px;
     width: 400px;
+    height: 70px;
+    overflow: hidden;
+    order: 0;
+    line-height: 22px;
 }
 .image {
     margin-bottom: 15px;
-    width: 400px;
-    height: 300px;
+    width: 420px;
+    height: 280px;
+    margin-bottom: 30px;
+}
+.separator {
+    height: 130px;
 }
 @font-face {
     font-family: 'Playfair Display';

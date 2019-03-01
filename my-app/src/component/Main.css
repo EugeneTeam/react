@@ -1,0 +1,123 @@
+.top {
+    display: flex;
+    margin-left: 60px;
+    margin-right: 70px;
+    align-items: center;
+    margin-bottom: 70px;
+}
+.menu > ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Playfair Display';
+    font-size: 14px;
+    margin-left: 55px;
+}
+.menu > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+.logo {
+    font-family: 'Playfair Display';
+    font-size: 30px;
+    margin-right: 360px;
+}
+
+.menu > ul > li:nth-child(2) {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.menu > ul > li:nth-child(3) {
+    margin-right: 100px;
+}
+.leavtext {
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    color: #C2B9AC;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 135px;
+}
+.order {
+    display: flex;
+    margin-left: 150px;
+}
+.left {
+    margin-right: 30px;
+}
+.right {
+    margin-left: 30px;
+}
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 290px;
+    background: #f0f0f0;
+    margin-bottom: 100px;
+}
+.sign {
+    font-family: 'Playfair Display';
+    font-size: 30px;
+    margin-bottom: 80px;
+}
+.scolor {
+    background: white;
+}
+.inpute {
+    width: 400px;
+    height: 28px;
+    border: 1px solid black;
+    border-width: 0px 0px 1px 0px;
+}
+.btn {
+    height: 31px;
+    border: 1px solid black;
+    border-width: 0px 0px 1px 0px;
+    background: white;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    background: #f0f0f0;
+}
+.footer-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 70px;
+}
+
+.footer-left {
+    margin-left: 150px;
+}
+.follow {
+    font-size: 14px;
+    font-family: 'Playfair Display';
+    margin-right: 25px;
+    height: 100px;
+}
+.instagram {
+    background: url("fonts/instagram.png");
+    width: 15px;
+    height: 15px;
+}
+.facebook {
+    background: url("fonts/facebook.png");
+    width: 8px;
+    height: 14px;
+    margin-right: 18px;
+    margin-left: 18px;
+}
+.twitter {
+    background: url("fonts/twitter.png");
+    width: 18px;
+    height: 13px;
+}
+.footer {
+    padding-top: 70px;
+}

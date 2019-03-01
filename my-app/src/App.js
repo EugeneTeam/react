@@ -2,6 +2,7 @@ import React from 'react'
 import {BrowserRouter, Route, Link} from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 import Post from './component/Post'
+import Main from './component/Main'
 const history = createBrowserHistory();
 
 class App extends React.Component {
@@ -10,7 +11,7 @@ class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <Route path="/article/:id" component={Post}/> 
-                    {/* <Route path="/category/:id" component={Post}/>  */}
+                    <Route exact path="/" component={Main}/> 
                 </div>
             </BrowserRouter>
         )

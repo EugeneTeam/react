@@ -6,12 +6,14 @@ class Post extends React.Component {
       super();
       this.state = {
         data: null,
+        name: null //category 
       };
     }
   
     componentWillMount() {
       let head = new Headers();
-      let postId = this.props.match.params.id;
+      let postId = this.props.index;
+      console.log(postId)
 
       var myInit = { method: 'GET',
                headers: head,
@@ -19,11 +21,16 @@ class Post extends React.Component {
 
       fetch(`http://localhost:4000/article/${postId}`, myInit)
         .then(response => response.json())
-        .then(data => this.setState({ data }));
+        .then(data => {
+            this.setState({ data })
+            fetch(`http://localhost:4000/category/${this.state.data.category_id}`, myInit)
+              .then(response => response.json())
+              .then(name =>  this.setState({name}))
+         });
     }
 
    render() {
-      if(!this.state.data) return (
+      if(!this.state.data || !this.state.name) return (
          <div>
             <h1>Loading...</h1>
          </div>
@@ -31,6 +38,7 @@ class Post extends React.Component {
       return(
          <div>
             <img src={this.state.data.image_url} className='image'></img>
+            <div className='type'>{this.state.name.name.toUpperCase()}</div>
             <div className='title'>{this.state.data.title}</div>
             <div className='text'>{this.state.data.text}</div>
          </div>
