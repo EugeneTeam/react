@@ -4,6 +4,7 @@ import FirstPost from './FirstPost'
 import './FirstPost.css'
 import Post from './Post'
 import Menu from './Menu'
+import SingUp from './SignUp'
 class Main extends React.Component {
 
     render() {
@@ -28,15 +29,7 @@ class Main extends React.Component {
                         <div className='separator'></div>
                     </div>
                 </div>
-                <div className='signup'>
-                    <div className='sign'>Sign up for our newsletter!</div>
-                    <div className='scolor'>
-                        <form>
-                            <input type='text' value='' className='inpute' placeholder="Enter a valid email address"></input>
-                            <input type='submit' value='>' className='btn'></input>
-                        </form>
-                    </div>
-                </div>
+                <SingUp></SingUp>
                 <div className='order'>
                     <div className='left'>
                         <Post index='5'></Post>
