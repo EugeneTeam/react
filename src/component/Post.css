@@ -9,6 +9,9 @@
     font-size: 30px;
     color: #C2B9AC;
 }
+a {
+    text-decoration: none;
+}
 .text {
     margin-top: 10px;
     font-family: 'Playfair Display';
@@ -27,6 +30,10 @@
 }
 .separator {
     height: 130px;
+}
+.box {
+    margin-left: 150px;
+    margin-bottom: 100px;
 }
 @font-face {
     font-family: 'Playfair Display';
