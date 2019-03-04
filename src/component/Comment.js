@@ -29,11 +29,24 @@ class Comment extends React.Component{
         }
         return errors;
       }}
+
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+            fetch(`http://localhost:4000/comment`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                mode: 'cors',
+                body: JSON.stringify(values, null, 2)
+            }).then((res) => {
+                
+            }).then((res1) => {
+                
+            });
           setSubmitting(false);
-        }, 400);
+        }, 500);
       }}
     >
       {({ isSubmitting }) => (

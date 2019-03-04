@@ -10,12 +10,13 @@ class CategoryPost extends React.Component {
           };
     }
     componentWillMount() {
-        let head = new Headers();
         let postId = this.props.match.params.id;
-        let myInit = { method: 'GET',
-                 headers: head,
-                 mode: 'cors'};
-        fetch(`http://localhost:4000/category/${postId}`, myInit)
+        fetch(`http://localhost:4000/category/${postId}`, 
+        {
+            method: 'GET',
+            headers: new Headers(),
+            mode: 'cors'
+        })
             .then(response => response.json())
             .then(name =>  this.setState({name}))
     }
