@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Menu from './Menu'
 import Post2 from './Post2';
-
+import './Main.css'
 class CategoryPost extends React.Component {
     constructor(){
         super()
@@ -27,17 +27,22 @@ class CategoryPost extends React.Component {
          )
 
         const posts = this.state.name.map((n) => {
-            return <Post2  image={n.image_url}
-                    name={n.Category.name} 
-                    id={n.id} 
-                    text={n.text} 
-                    title={n.title} />
+            return <div>
+                        <Post2  image={n.image_url}
+                            name={n.Category.name}
+                            id={n.id}
+                            text={n.text}
+                            title={n.title} />
+                            <div className='separ'></div>
+                    </div>
         });
 
         return(
             <div>
                 <Menu />
-                {posts}
+                <div className='center'>
+                    {posts}
+                </div>
             </div>
         )
     }

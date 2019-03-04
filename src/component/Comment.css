@@ -1,0 +1,26 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    margin-top: 150px;
+}
+.main > input[type='text'],input[type='email'] {
+    height: 20px;
+    background: white;
+    border-color: gray;
+    outline:none;
+    border-width: 0px 0px 2px 0px;
+    width: 400px;
+}
+#error {
+    color: red;
+}
+.main > button {
+    background: white;
+    border-color: gray;
+    height: 30px;
+    width: 400px;
+}
+.main > button:hover {
+    background: lightgray;
+}

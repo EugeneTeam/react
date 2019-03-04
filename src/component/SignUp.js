@@ -27,6 +27,7 @@ class SignUp extends React.Component {
                         <input type='submit' value='>' className='btn'></input>
                     </form>
                 </div>
+                
             </div>
         )
     }

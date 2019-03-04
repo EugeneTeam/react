@@ -31,9 +31,8 @@ a {
 .separator {
     height: 130px;
 }
-.box {
-    margin-left: 150px;
-    margin-bottom: 100px;
+.separ {
+    height: 200px;
 }
 @font-face {
     font-family: 'Playfair Display';
