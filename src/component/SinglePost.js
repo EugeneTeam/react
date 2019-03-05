@@ -3,6 +3,7 @@ import Menu from './Menu'
 import './Post.css'
 import './FirstPost.css'
 import Comment from './Comment'
+import Comments from './Comments'
 
 class FirstPost extends React.Component {
     constructor() {
@@ -44,7 +45,8 @@ class FirstPost extends React.Component {
                   <div className='ftitle'>{this.state.data[0].title}</div>
                   <div className='ftext'>{this.state.data[0].text}</div>
                 </div>
-                <Comment />
+                <Comment index={this.props.match.params.id}/>
+                <Comments />
             </div>
         )
     }

@@ -21,7 +21,7 @@ class Post extends React.Component {
       fetch(`http://localhost:4000/article/${postId}`, myInit)
         .then(response => response.json())
         .then(data => {this.setState({ data })
-        console.log(this.state.data[0].Category.name);});
+      });
     }
 
    render() {
