@@ -37,6 +37,9 @@ class Comments extends React.Component {
                             <div>
                                 {n.message}
                             </div>
+                            <div className='reply'>
+                                <a href=''>Answer {n.name_author}</a>
+                            </div>
                         </div>
                     </div>
         });
