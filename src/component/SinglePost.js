@@ -46,7 +46,7 @@ class FirstPost extends React.Component {
                   <div className='ftext'>{this.state.data[0].text}</div>
                 </div>
                 <Comment index={this.props.match.params.id}/>
-                <Comments />
+                <Comments index={this.props.match.params.id}/>
             </div>
         )
     }

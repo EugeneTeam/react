@@ -14,7 +14,7 @@ class Comment extends React.Component{
         return(
             <div>
     <Formik
-      initialValues={{ email: '', name: '', text: '', parent: null, article_id: -1}}
+      initialValues={{ email: '', name: '', text: '', parent: null, article_id: -1, avatar: '/image/avatar/default avatar.png'}}
       validate={values => {
         let errors = {};
         if (!values.email) {
@@ -39,6 +39,16 @@ class Comment extends React.Component{
 
       onSubmit={(values, { setSubmitting }) => {
         values.article_id = this.props.index;
+        
+        let form = document.forms[0];
+        let input = form.elements.group1;
+        
+        input.forEach(n => {
+          if(n.checked) {
+            values.avatar = n.value;
+          }
+        });
+      
         setTimeout(() => {
             fetch(`http://localhost:4000/comment`, {
                 method: 'POST',
@@ -67,15 +77,36 @@ class Comment extends React.Component{
               <div>
                 <fieldset>
                   <label>
-                    <div className='avatar1'></div>
-                    <Field type='radio' value='1' name="group1" checked/>
+                    <img src='/image/avatar/1.png' className='image'/>
+                    <Field type='radio' value='/image/avatar/1.png' name="group1"/>
+                    <label></label>
                   </label>
-                  <label><Field type='radio' value='2' name="group1" className='av2'/></label>
-                  <label><Field type='radio' value='3' name="group1" className='av3'/></label>
-                  <br></br>
-                  <label><Field type='radio' value='4' name="group1" className='av4'/></label>
-                  <label><Field type='radio' value='5' name="group1" className='av5'/></label>
-                  <label><Field type='radio' value='6' name="group1" className='av6'/></label>
+                  <label>
+                    <img src='/image/avatar/2.png' className='image'/>
+                    <Field type='radio' value='/image/avatar/2.png' name="group1"/>
+                    <label></label>
+                  </label>
+                  <label>
+                    <img src='/image/avatar/3.png' className='image'/>
+                    <Field type='radio' value='/image/avatar/3.png' name="group1"/>
+                    <label></label>
+                  </label>
+                    <br></br>
+                    <label>
+                    <img src='/image/avatar/4.png' className='image'/>
+                    <Field type='radio' value='/image/avatar/4.png' name="group1"/>
+                    <label></label>
+                  </label>
+                  <label>
+                    <img src='/image/avatar/5.png' className='image'/>
+                    <Field type='radio' value='/image/avatar/5.png' name="group1"/>
+                    <label></label>
+                  </label>
+                  <label>
+                    <img src='/image/avatar/6.png' className='image'/>
+                    <Field type='radio' value='/image/avatar/6.png' name="group1"/>
+                    <label></label>
+                  </label>
                 </fieldset>
               </div>
               <br></br>
@@ -91,3 +122,10 @@ class Comment extends React.Component{
 }
 
 export default Comment;
+
+/*
+  import Cookies from 'universal-cookie';
+  const cookies = new Cookies();
+  cookies.set('myCat', 'Pacman', { path: '/' });
+  console.log(cookies.get('myCat')); // Pacman
+ */

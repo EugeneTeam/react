@@ -28,9 +28,79 @@
 .main > div > fieldset {
     border: none;
 }
-.avatar1 {
-    width: 300px;
-    height: 300px;
-    background: url('/image/image/1.png');
-
+.main > div > fieldset > label > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: black;
+    position: relative;
 }
+input[type='radio'] {display: none;}
+input[type='radio'] + label
+{
+    background: lightblue;
+    width: 60px;
+    height: 60px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    margin-left: -55px;
+    margin-bottom: 25px;
+    border-radius: 30px;
+    margin-right: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+input[type='radio']:checked + label
+ {
+    background: red;
+    width: 60px;
+    height: 60px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    margin-left: -55px;
+    margin-bottom: 25px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+ }
+
+ .avatar > img{
+     width: 50px;
+     height: 50px;
+     border-radius: 25px;
+     padding: 2px;
+ }
+ 
+ .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 26px;
+    background: lightblue;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-right: 20px;
+ }
+ .comment {
+     display: flex;
+     flex-direction: row;
+     background: lightblue;
+     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+     margin-bottom: 10px;
+ }
+ .cont {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: auto;
+    word-break: break-all;
+ }
+ .name {
+    font-size: 20px;
+ }
+ .time {
+     font-size: 10px;
+     color: gray;
+     margin-bottom: 5px;
+ }
+ .comment-main {
+     margin-left: 150px;
+     margin-right: 150px;
+     margin-top: 50px;
+ }
