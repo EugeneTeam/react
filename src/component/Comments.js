@@ -1,52 +1,32 @@
 import React from 'react'
-import './Comment.css'
+import CommentForm from './Comment/CommentForm'
+import CommentList from './Comment/CommentList'
 class Comments extends React.Component {
-    constructor(){
+    constructor() {
         super();
+        this.id = null;
         this.state = {
-            data: null
-        };
+            parentComment: null
+        }
     }
-
     componentWillMount() {
-        fetch(`http://localhost:4000/getcomments/${this.props.index}`, {
-            method: 'GET',
-            headers: new Headers(),
-            mode: 'cors'
-        })
-        .then(response => response.json())
-        .then(data => {this.setState({ data })
-      });
+        this.id = this.props.index;
     }
-
+    changeParentComment = (id) => {
+        this.setState({
+          parentComment: id
+        });
+      };
     render() {
-        if(!this.state.data) return (
+        if(this.id == null) return (
             <div>
                <h1>Loading...</h1>
             </div>
          )
-         console.log(this.state.data);
-         const posts = this.state.data.map((n) => {
-            return <div className='comment'>
-                        <div className='avatar'>
-                            <img src={n.avatar_author} className='avatar'></img>
-                        </div>
-                        <div className='cont'>
-                            <di className='name'>{n.name_author}</di>
-                            <div className='time'>{n.createdAt.split('T')[0]},{n.createdAt.split('T')[1].split('.')[0]}</div>
-                            <div>
-                                {n.message}
-                            </div>
-                            <div className='reply'>
-                                <a href=''>Answer {n.name_author}</a>
-                            </div>
-                        </div>
-                    </div>
-        });
-
         return(
-            <div className='comment-main'>
-                {posts}
+            <div>
+                <CommentForm index={this.id} parent={!this.state.parentComment?-1:this.state.parentComment}/>
+                <CommentList index={this.id} changeParentComment={this.changeParentComment}/>
             </div>
         )
     }
