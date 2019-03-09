@@ -44,6 +44,7 @@ class FirstPost extends React.Component {
                   <div className='ftitle'>{this.state.data[0].title}</div>
                   <div className='ftext'>{this.state.data[0].text}</div>
                 </div>
+                <div id='main-form'></div>
                 <Comments index={this.props.match.params.id}/>
             </div>
         )

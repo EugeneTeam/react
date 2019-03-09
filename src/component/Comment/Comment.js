@@ -8,11 +8,10 @@ class Post2 extends React.Component {
     componentDidMount() {
         //console.log(this.props.changeParentComment());
     }
-    handleClick = id => () => {
-        this.props.changeParentComment(id);
+    handleClick = (id, name) => () => {
+        this.props.changeParentComment(id, name);
       };
    render() {
-    const {comments} = this.props;
     
       return(
             <div className='comment'>
@@ -27,7 +26,7 @@ class Post2 extends React.Component {
                     </div>
                     <div className='reply'>
                         <label>
-                            <button onClick={this.handleClick(this.props.id)}>Answer {this.props.name_author}</button>
+                            <a href='#main-form' onClick={this.handleClick(this.props.id, this.props.name_author)}>Answer {this.props.name_author}</a>
                         </label>
                     </div>
                 </div>

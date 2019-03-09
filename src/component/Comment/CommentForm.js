@@ -6,15 +6,14 @@ class CommentForm extends React.Component{
   constructor() {
     super();
     this.id = null;
-    this.parentComment = -1;
   }
   componentWillMount() {
     this.id = this.props.index;
-    console.log(this.props.parent)
   }
     render() {
         return(
-            <div >
+            <div>
+              <div className='answer-name'>{this.props.name?"Reply to " + this.props.name:""}</div>
             <Formik
               initialValues={{ email: '', name: '', text: '', parent: null, article_id: -1, avatar: '/image/avatar/default avatar.png'}}
               validate={values => {
@@ -36,22 +35,23 @@ class CommentForm extends React.Component{
                 if (!values.text) {
                     errors.text = 'Required';
                 }
-                console.log(values.parent);
                 return errors;
               }}
 
               onSubmit={(values, { setSubmitting }) => {
+               
                 values.article_id = this.props.index;
+                values.parent = this.props.parent;
                 
                 let form = document.forms[0];
                 let input = form.elements.group1;
-                
+
                 input.forEach(n => {
                   if(n.checked) {
                     values.avatar = n.value;
                   }
                 });
-              
+                
                 setTimeout(() => {
                     fetch(`http://localhost:4000/comment`, {
                         method: 'POST',

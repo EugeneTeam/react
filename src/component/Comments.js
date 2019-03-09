@@ -6,15 +6,17 @@ class Comments extends React.Component {
         super();
         this.id = null;
         this.state = {
-            parentComment: null
+            parentComment: null,
+            parentName: null
         }
     }
     componentWillMount() {
         this.id = this.props.index;
     }
-    changeParentComment = (id) => {
+    changeParentComment = (id, name) => {
         this.setState({
-          parentComment: id
+          parentComment: id,
+          parentName: name
         });
       };
     render() {
@@ -23,10 +25,16 @@ class Comments extends React.Component {
                <h1>Loading...</h1>
             </div>
          )
+         
         return(
             <div>
-                <CommentForm index={this.id} parent={!this.state.parentComment?-1:this.state.parentComment}/>
-                <CommentList index={this.id} changeParentComment={this.changeParentComment}/>
+                <CommentForm 
+                    index={this.id} 
+                    parent={this.state.parentComment}
+                    name={this.state.parentName}/>
+                <CommentList 
+                    index={this.id} 
+                    changeParentComment={this.changeParentComment}/>
             </div>
         )
     }
