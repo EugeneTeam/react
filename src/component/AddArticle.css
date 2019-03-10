@@ -1,0 +1,29 @@
+.title {
+    width: 400px;
+}
+.text {
+    width: 400px;
+}
+.file {
+}
+.btn1 {
+    height: 30px;
+    width: 70px;
+    background-color: white;
+    color: black;
+    border: 2px solid #d9d9f3; 
+    border-radius: 10px;
+    margin: 10px;
+    outline: none;
+}
+.btn1:hover{
+    background: #ceefe4;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    background: #f4f0e6;
+}

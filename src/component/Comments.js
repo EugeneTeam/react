@@ -28,12 +28,12 @@ class Comments extends React.Component {
          
         return(
             <div>
-                <CommentForm 
-                    index={this.id} 
+                <CommentForm
+                    index={this.id}
                     parent={this.state.parentComment}
                     name={this.state.parentName}/>
-                <CommentList 
-                    index={this.id} 
+                <CommentList
+                    index={this.id}
                     changeParentComment={this.changeParentComment}/>
             </div>
         )

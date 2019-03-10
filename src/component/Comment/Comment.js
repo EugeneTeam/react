@@ -1,38 +1,51 @@
 import React, {Component} from 'react'
 import '../Comment.css'
+import CommentList from "./CommentList";
 
-class Post2 extends React.Component {
-    constructor() {
-        super();
-    }
-    componentDidMount() {
-        //console.log(this.props.changeParentComment());
-    }
+export default class Comment extends React.Component {
     handleClick = (id, name) => () => {
         this.props.changeParentComment(id, name);
-      };
-   render() {
-    
-      return(
-            <div className='comment'>
-                <div className='avatar'>
-                    <img src={this.props.avatar_author} className='avatar'></img>
-                </div>
-                <div className='cont'>
-                    <div className='name'>{this.props.name_author}</div>
-                    <div className='time'>{this.props.createdAt.split('T')[0]},{this.props.createdAt.split('T')[1].split('.')[0]}</div>
-                    <div>
-                        {this.props.message}
-                    </div>
-                    <div className='reply'>
-                        <label>
-                            <a href='#main-form' onClick={this.handleClick(this.props.id, this.props.name_author)}>Answer {this.props.name_author}</a>
-                        </label>
-                    </div>
-                </div>
-            </div>
-      )
-   }
-}
+    };
 
-export default Post2;
+    render() {
+        const {
+            index,
+            avatarAuthor,
+            nameAuthor,
+            createdAt,
+            message,
+            id,
+            comments
+        } = this.props;
+        return (
+            <div>
+                <div className='comment'>
+                    <div className='avatar'>
+                        <img src={avatarAuthor} className='avatar'/>
+                    </div>
+                    <div className='cont'>
+                        <div className='name'>{nameAuthor}</div>
+                        <div className='time'>
+                            {createdAt.split('T')[0]},{createdAt.split('T')[1].split('.')[0]}
+                        </div>
+                        <div>
+                            {message}
+                        </div>
+                        <div className='reply'>
+                            <label>
+                                <a href='#main-form' onClick={this.handleClick(id, nameAuthor)}>
+                                    Answer {nameAuthor}
+                                </a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                {comments ? (
+                    <div className='child-comment'>
+                        <CommentList comments={comments} index={index}/>
+                    </div>
+                ) : null}
+            </div>
+        )
+    }
+}

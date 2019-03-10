@@ -22,15 +22,11 @@ class FirstPost extends React.Component {
   
         fetch(`http://localhost:4000/article/${postId}`, myInit)
           .then(response => response.json())
-          .then(data => {
-              this.setState({ data })
-              fetch(`http://localhost:4000/category/${this.state.data.category_id}`, myInit)
-              .then(response => response.json())
-              .then(name =>  this.setState({name}))
+          .then(data => {this.setState({ data })
         });
       }
     render() {
-        if(!this.state.data || !this.state.name) return (
+        if(!this.state.data) return (
             <div>
                <h1>Loading...</h1>
             </div>
@@ -38,7 +34,7 @@ class FirstPost extends React.Component {
         return(
             <div>
                 <Menu></Menu>
-                <img src={this.state.data[0].image_url} className='fimage'></img>
+                <img src={this.state.data[0].imageUrl} className='fimage'></img>
                 <div className='mar'>
                   <div className='ftype'>{this.state.data[0].Category.name.toUpperCase()}</div>
                   <div className='ftitle'>{this.state.data[0].title}</div>

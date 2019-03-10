@@ -8,6 +8,8 @@
     font-family: 'Playfair Display';
     font-size: 30px;
     color: #C2B9AC;
+    height: 40px;
+    overflow: hidden;
 }
 a {
     text-decoration: none;

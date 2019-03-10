@@ -15,7 +15,7 @@ class CommentForm extends React.Component{
             <div>
               <div className='answer-name'>{this.props.name?"Reply to " + this.props.name:""}</div>
             <Formik
-              initialValues={{ email: '', name: '', text: '', parent: null, article_id: -1, avatar: '/image/avatar/default avatar.png'}}
+              initialValues={{ email: '', name: '', text: '', parent: null, articleId: -1, avatar: '/image/avatar/default avatar.png'}}
               validate={values => {
                 let errors = {};
                 if (!values.email) {
@@ -40,7 +40,7 @@ class CommentForm extends React.Component{
 
               onSubmit={(values, { setSubmitting }) => {
                
-                values.article_id = this.props.index;
+                values.articleId = this.props.index;
                 values.parent = this.props.parent;
                 
                 let form = document.forms[0];

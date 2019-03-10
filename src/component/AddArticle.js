@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage} from 'formik';
-
+import './AddArticle.css'
 class AddArticle extends React.Component {
     constructor() {
         super();
@@ -22,7 +22,7 @@ class AddArticle extends React.Component {
 
     render() {
         return(
-            <div>
+            <div clas='form'>
                 <Formik 
                     initialValues={{text:'', title:'', image:''}}
                     validate={function(values) {
@@ -50,14 +50,14 @@ class AddArticle extends React.Component {
                 >
                 {({ isSubmitting }) => (
                     <Form>
-                        <Field type="text" name="title" placeholder='Title'/>
+                        <Field type="text" name="title" placeholder='Title' className='title'/>
                         <br></br>
-                        <Field type='file' value='' accept="image/*" onChange={this.handleChange}/>
+                        <Field type='file' value='' accept="image/*" className='file' onChange={this.handleChange}/>
                         <br></br>
-                        <textarea placeholder='Article'></textarea>
+                        <textarea placeholder='Article' className='text'></textarea>
                         <br></br>
-                        <button type="submit" disabled={isSubmitting}>Submit</button>
-                        <button type="submit" >Preview</button>
+                        <button type="submit" disabled={isSubmitting} className='btn1'>Submit</button>
+                        <button type="submit" className='btn1'>Preview</button>
                     </Form>
                 )}
                 </Formik>

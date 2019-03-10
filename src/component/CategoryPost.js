@@ -19,6 +19,7 @@ class CategoryPost extends React.Component {
         })
             .then(response => response.json())
             .then(name =>  this.setState({name}))
+            console.log(this.state.name)
     }
     render() {
         if(!this.state.name) return (
@@ -29,7 +30,7 @@ class CategoryPost extends React.Component {
 
         const posts = this.state.name.map((n) => {
             return <div>
-                        <Post2  image={n.image_url}
+                        <Post2  image={n.imageUrl}
                             name={n.Category.name}
                             id={n.id}
                             text={n.text}

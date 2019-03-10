@@ -29,7 +29,7 @@ class FirstPost extends React.Component {
          )
         return(
             <div>
-                <img src={this.state.data[0].image_url} className='fimage'></img>
+                <img src={this.state.data[0].imageUrl} className='fimage'></img>
                 <div className='mar'>
                   <div className='ftype'>{this.state.data[0].Category.name.toUpperCase()}</div>
                   <a href={'article/' + this.state.data[0].id}><div className='ftitle'>{this.state.data[0].title}</div></a>
