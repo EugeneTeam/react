@@ -5,6 +5,7 @@ import './FirstPost.css'
 import Post from './Post'
 import Menu from './Menu'
 import SingUp from './SignUp'
+import Footer from './Footer'
 class Main extends React.Component {
 
     render() {
@@ -43,13 +44,7 @@ class Main extends React.Component {
                     <div className="footer-left">
                         Terms and conditions Privacy
                     </div>
-                    
-                    <div className="footer-right">
-                        <div className="follow">Follow</div>
-                        <a href=""><div className="instagram"></div></a>
-                        <a href=""><div className="facebook"></div></a>
-                        <a href=""><div className="twitter"></div></a>
-                    </div>
+                    <Footer/>
                 </div>
             </div>
         )

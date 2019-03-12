@@ -13,7 +13,7 @@ class CommentForm extends React.Component{
     render() {
         return(
             <div>
-              <div className='answer-name'>{this.props.name?"Reply to " + this.props.name:""}</div>
+              <div id='main-form' className='answer-name'>{this.props.name?"Reply to " + this.props.name:""}</div>
             <Formik
               initialValues={{ email: '', name: '', text: '', parent: null, articleId: -1, avatar: '/image/avatar/default avatar.png'}}
               validate={values => {

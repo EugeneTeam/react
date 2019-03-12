@@ -74,15 +74,15 @@ input[type='radio']:checked + label
     width: 50px;
     height: 50px;
     border-radius: 26px;
-    background: lightblue;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     margin-right: 20px;
  }
  .comment {
      display: flex;
      flex-direction: row;
-     background: lightblue;
-     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+     background: white;
+     box-shadow: 0 0 10px rgba(0,0,0,0.2);
      margin-bottom: 10px;
  }
  .cont {
@@ -116,4 +116,8 @@ input[type='radio']:checked + label
     margin-top: 50px;
     margin-bottom: -100px;
     font-size: 30px;
+}
+.separator1 {
+    height: 100px;
+    width: 100%;
 }

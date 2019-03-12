@@ -1,17 +1,25 @@
 import React from 'react'
 import CommentForm from './Comment/CommentForm'
 import CommentList from './Comment/CommentList'
+import './Comment.css'
 class Comments extends React.Component {
     constructor() {
         super();
-        this.id = null;
         this.state = {
             parentComment: null,
-            parentName: null
+            parentName: null,
+            data: null
         }
     }
     componentWillMount() {
-        this.id = this.props.index;
+        fetch(`http://localhost:4000/article/${this.props.index}`, {
+            method: 'GET',
+            headers: new Headers(),
+            mode: 'cors'
+        })
+        .then(response => response.json())
+        .then(data => {this.setState({ data })
+      });
     }
     changeParentComment = (id, name) => {
         this.setState({
@@ -20,21 +28,22 @@ class Comments extends React.Component {
         });
       };
     render() {
-        if(this.id == null) return (
+        if(!this.id && !this.state.data) return (
             <div>
                <h1>Loading...</h1>
             </div>
-         )
-         
+        )
         return(
             <div>
+                <div className='separator1'></div>
+                <CommentList
+                    comments={this.state.data.Comment}
+                    index={this.id}
+                    changeParentComment={this.changeParentComment}/>
                 <CommentForm
                     index={this.id}
                     parent={this.state.parentComment}
                     name={this.state.parentName}/>
-                <CommentList
-                    index={this.id}
-                    changeParentComment={this.changeParentComment}/>
             </div>
         )
     }
