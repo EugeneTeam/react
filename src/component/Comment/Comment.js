@@ -45,7 +45,10 @@ export default class Comment extends React.Component {
                 </div>
                 {comments? (
                     <div className='child-comment'>
-                        <CommentList comments={comments} index={index}/>
+                        <CommentList 
+                            comments={comments} 
+                            index={index} 
+                            changeParentComment={this.props.changeParentComment}/>
                     </div>
                 ) : null}
             </div>

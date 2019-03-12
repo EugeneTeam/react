@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Menu from './Menu'
 import Post2 from './Post2';
 import './Main.css'
+import Footer from './Footer'
 class CategoryPost extends React.Component {
     constructor(){
         super()
@@ -45,6 +46,7 @@ class CategoryPost extends React.Component {
                 <div className='center'>
                     {posts}
                 </div>
+                <Footer/>
             </div>
         )
     }

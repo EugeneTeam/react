@@ -38,10 +38,10 @@ class Comments extends React.Component {
                 <div className='separator1'></div>
                 <CommentList
                     comments={this.state.data.Comment}
-                    index={this.id}
+                    index={this.props.index}
                     changeParentComment={this.changeParentComment}/>
                 <CommentForm
-                    index={this.id}
+                    index={this.props.index}
                     parent={this.state.parentComment}
                     name={this.state.parentName}/>
             </div>

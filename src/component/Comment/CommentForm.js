@@ -9,6 +9,8 @@ class CommentForm extends React.Component{
   }
   componentWillMount() {
     this.id = this.props.index;
+    console.log(this.id)
+    console.log(this.props.index)
   }
     render() {
         return(

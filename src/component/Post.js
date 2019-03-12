@@ -8,16 +8,13 @@ class Post extends React.Component {
         data: null
       };
     }
-  
     componentWillMount() {
-       
       let head = new Headers();
       let postId = this.props.index;
 
       var myInit = { method: 'GET',
                headers: head,
                mode: 'cors'};
-               
       fetch(`http://localhost:4000/article/${postId}`, myInit)
         .then(response => response.json())
         .then(data => {this.setState({ data })
@@ -30,7 +27,6 @@ class Post extends React.Component {
             <h1>Loading...</h1>
          </div>
       )
-      
       return(
          <div>
             <img src={this.state.data.imageUrl} className='image'></img>
@@ -40,6 +36,6 @@ class Post extends React.Component {
          </div>
       )
    }
-} 
+}
 
 export default Post;

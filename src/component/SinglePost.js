@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import Menu from './Menu'
 import './Post.css'
 import './FirstPost.css'
+import './Main.css'
 import Comments from './Comments'
+import Footer from './Footer'
 
 class FirstPost extends React.Component {
     constructor() {
@@ -41,7 +43,9 @@ class FirstPost extends React.Component {
                   <div className='ftext'>{this.state.data.text}</div>
                 </div>
                 <div></div>
+                {console.log(`[SinglePost]article id = ${this.props.match.params.id}`)}
                 <Comments index={this.props.match.params.id}/>
+                <Footer/>
             </div>
         )
     }

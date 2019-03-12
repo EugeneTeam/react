@@ -40,12 +40,7 @@ class Main extends React.Component {
                     </div>
                 </div>
                 <div className='separator'></div>
-                <div className="footer">
-                    <div className="footer-left">
-                        Terms and conditions Privacy
-                    </div>
-                    <Footer/>
-                </div>
+                <Footer/>
             </div>
         )
     }
