@@ -4,8 +4,9 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import Main from './component/Main'
 import SinglePost from './component/SinglePost';
 import CategoryPost from './component/CategoryPost';
-import AddArticle from './component/AddArticle'
 import NotFound from './component/NotFound'
+import './component/Main.css'
+
 const history = createBrowserHistory();
 
 class App extends React.Component {
@@ -13,16 +14,12 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                <Route exact={true} path="/" component={Main}> 
+                    <Route exact path="/" component={Main}/>
+                    <Route path="/article/:id" component={SinglePost}/>
+                    <Route path="/category/:id" component={CategoryPost}/>
 
-                    <Route path="/article/:id" component={SinglePost}/> 
-                    <Route path="/category/:id" component={CategoryPost}/> 
-                    <Route path="/addarticle" component={AddArticle}/> 
-
-                    
-                    <Redirect from='*' to='/404' exact={true} />
-                    <Route path='/404' component={NotFound} />
-                </Route>
+                    {/* <Redirect from='*' to='/404' exact={true} />
+                    <Route path='/404' component={NotFound} /> */}
                 </div>
             </BrowserRouter>
         )

@@ -9,13 +9,11 @@ class Post extends React.Component {
       };
     }
     componentWillMount() {
-      let head = new Headers();
-      let postId = this.props.index;
-
-      var myInit = { method: 'GET',
-               headers: head,
-               mode: 'cors'};
-      fetch(`http://localhost:4000/article/${postId}`, myInit)
+      fetch(`http://localhost:4000/article/${this.props.index}`, {
+         method: 'GET',
+         headers: new Headers(),
+         mode: 'cors'
+      })
         .then(response => response.json())
         .then(data => {this.setState({ data })
       });

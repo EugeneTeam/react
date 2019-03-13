@@ -48,23 +48,44 @@
 .right {
     margin-left: 30px;
 }
-.signup {
+.also > .scolor{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     height: 290px;
     background: #f0f0f0;
-    margin-bottom: 100px;
+    margin-left: 150px;
+    /* justify-content: space-between; */
 }
-.sign {
+.also {
+    background: #f0f0f0;
+}
+.also-post {
+    width: 250px;
+    height: 200px;
+}
+.also > div > div > img {
+    width: 250px;
+    height: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.also > div > div:nth-child(2) {
+    margin-right: 70px;
+    margin-left: 70px;
+}
+.also-like {
     font-family: 'Playfair Display';
-    font-size: 30px;
-    margin-bottom: 80px;
+    width: 100%;
+    font-size: 20px;
+    margin-left: 150px;
+    padding-top: 50px;
+    color: #C7C3B8;
 }
-.scolor {
-    background: white;
+.also-title {
+    font-family: 'Playfair Display';
+    font-size: 20px;
+    color: #ACACAC;
+    /* font-weight: bold; */
 }
 .inpute {
     width: 400px;
@@ -78,13 +99,7 @@
     border-width: 0px 0px 1px 0px;
     background: white;
 }
-.footer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 100px;
-    background: #f0f0f0;
-}
+
 .footer-right {
     display: flex;
     flex-direction: row;
@@ -126,4 +141,36 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+html {
+    height: 100%;
+}
+.footer {
+    display: flex;
+    flex-grow: 0;
+    justify-content: space-between;
+    width: 100%; 
+    height: 100px;
+    background: #f0f0f0;
+}
+.share {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: 'Playfair Display';
+    font-size: 15px;
+    color: #C7C3B8;
+    text-decoration: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.share > a:nth-child(1) {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.share > a:nth-child(2), .share > a:nth-child(3),.share > a:nth-child(4)  {
+    margin-right: 20px;
+}
+.share > a {
+    color: gray
 }

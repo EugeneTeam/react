@@ -7,7 +7,6 @@ class CommentsList extends React.Component {
         const mar = {
             marginLeft: '50px'
         };
-
         return(<div style={mar}>
                 {comments.map(comment => (
                     <Comment

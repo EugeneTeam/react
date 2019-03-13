@@ -6,7 +6,6 @@ export default class Comment extends React.Component {
     handleClick = (id, name) => () => {
         this.props.changeParentComment(id, name);
     };
-
     render() {
         const {
             index,
@@ -17,9 +16,6 @@ export default class Comment extends React.Component {
             id,
             comments
         } = this.props;
-
-        console.log(nameAuthor);
-
         return (
             <div>
                 <div className='comment'>
@@ -45,9 +41,9 @@ export default class Comment extends React.Component {
                 </div>
                 {comments? (
                     <div className='child-comment'>
-                        <CommentList 
-                            comments={comments} 
-                            index={index} 
+                        <CommentList
+                            comments={comments}
+                            index={index}
                             changeParentComment={this.props.changeParentComment}/>
                     </div>
                 ) : null}

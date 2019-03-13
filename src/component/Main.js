@@ -10,36 +10,9 @@ class Main extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='wrapper'>
                 <Menu />
-                <FirstPost />
-                <div className='leavetext'>LEAVE A COMMENT</div>
-                <div className='order'>
-
-                    <div className='left'>
-                        <Post index='2' />
-                        <div className='separator'></div>
-                        <Post index='4' />
-                        <div className='separator'></div>
-                    </div>
-
-                    <div className='right'>
-                        <Post index='3' />
-                        <div className='separator'></div>
-                        <Post index='5' />
-                        <div className='separator'></div>
-                    </div>
-                </div>
-                <SingUp />
-                <div className='order'>
-                    <div className='left'>
-                        <Post index='6' />
-                    </div>
-                    <div className='right'>
-                        <Post index='7' />
-                    </div>
-                </div>
-                <div className='separator'></div>
+                <div className='content'></div>
                 <Footer/>
             </div>
         )

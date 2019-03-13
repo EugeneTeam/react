@@ -17,33 +17,36 @@ class Comments extends React.Component {
             headers: new Headers(),
             mode: 'cors'
         })
-        .then(response => response.json())
-        .then(data => {this.setState({ data })
-      });
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ data })
+                console.log(data)
+            });
     }
     changeParentComment = (id, name) => {
         this.setState({
-          parentComment: id,
-          parentName: name
+            parentComment: id,
+            parentName: name
         });
-      };
+    };
     render() {
-        if(!this.id && !this.state.data) return (
+        if (!this.id && !this.state.data) return (
             <div>
-               <h1>Loading...</h1>
+                <h1>Loading...</h1>
             </div>
         )
-        return(
+        console.log(`parent = ${this.state.parentComment}`)
+        return (
             <div>
                 <div className='separator1'></div>
                 <CommentList
                     comments={this.state.data.Comment}
                     index={this.props.index}
-                    changeParentComment={this.changeParentComment}/>
+                    changeParentComment={this.changeParentComment} />
                 <CommentForm
                     index={this.props.index}
                     parent={this.state.parentComment}
-                    name={this.state.parentName}/>
+                    name={this.state.parentName} />
             </div>
         )
     }
