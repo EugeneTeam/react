@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
-import './Main.css'
+import './css/Main.css'
 import FirstPost from './FirstPost'
-import './FirstPost.css'
+import './css/FirstPost.css'
 import Post from './Post'
 import Menu from './Menu'
 import SingUp from './SignUp'
@@ -13,7 +13,7 @@ class Main extends React.Component {
             <div className='wrapper'>
                 <Menu />
                 <div className='content'></div>
-                <Footer/>
+                <Footer />
             </div>
         )
     }

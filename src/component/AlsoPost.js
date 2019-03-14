@@ -5,7 +5,7 @@ class AlsoPost extends React.Component {
         return (
             <div className='also-post'>
                 <img src={this.props.img}></img>
-                <a href={'article/' + this.props.link}>
+                <a href={this.props.link}>
                     <div className='also-title'>
                         {this.props.title}
                     </div>

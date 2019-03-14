@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import './Post.css'
-import './FirstPost.css'
+import './css/Post.css'
+import './css/FirstPost.css'
 
 class FirstPost extends React.Component {
     constructor() {

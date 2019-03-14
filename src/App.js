@@ -5,7 +5,7 @@ import Main from './component/Main'
 import SinglePost from './component/SinglePost';
 import CategoryPost from './component/CategoryPost';
 import NotFound from './component/NotFound'
-import './component/Main.css'
+import './component/css/Main.css'
 
 const history = createBrowserHistory();
 
@@ -14,12 +14,12 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Route exact path="/" component={Main}/>
-                    <Route path="/article/:id" component={SinglePost}/>
-                    <Route path="/category/:id" component={CategoryPost}/>
-
-                    {/* <Redirect from='*' to='/404' exact={true} />
-                    <Route path='/404' component={NotFound} /> */}
+                    <Switch>
+                        <Route exact path="/" component={Main}/>
+                        <Route exact path="/article/:id" component={SinglePost}/>
+                        <Route exact path="/category/:id" component={CategoryPost}/>
+                        <Route component={NotFound} />
+                    </Switch>
                 </div>
             </BrowserRouter>
         )

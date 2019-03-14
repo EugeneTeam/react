@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './Post.css'
+import './css/Post.css'
 import Footer from './Footer'
 
 class Post2 extends React.Component {

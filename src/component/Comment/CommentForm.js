@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import '../Comment.css'
+import '../css/Comment.css'
 
 class CommentForm extends React.Component {
   constructor() {

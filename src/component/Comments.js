@@ -1,7 +1,7 @@
 import React from 'react'
 import CommentForm from './Comment/CommentForm'
 import CommentList from './Comment/CommentList'
-import './Comment.css'
+import './css/Comment.css'
 class Comments extends React.Component {
     constructor() {
         super();

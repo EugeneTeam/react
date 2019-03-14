@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Menu from './Menu'
 import Post2 from './Post2';
-import './Main.css'
+import './css/Main.css'
 import Footer from './Footer'
 class CategoryPost extends React.Component {
     constructor() {

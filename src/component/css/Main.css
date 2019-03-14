@@ -117,19 +117,19 @@
     height: 100px;
 }
 .instagram {
-    background: url("fonts/instagram.png");
+    background: url("../fonts/instagram.png");
     width: 15px;
     height: 15px;
 }
 .facebook {
-    background: url("fonts/facebook.png");
+    background: url("../fonts/facebook.png");
     width: 8px;
     height: 14px;
     margin-right: 18px;
     margin-left: 18px;
 }
 .twitter {
-    background: url("fonts/twitter.png");
+    background: url("../fonts/twitter.png");
     width: 18px;
     height: 13px;
 }

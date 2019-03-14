@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Menu from './Menu'
-import './Post.css'
-import './FirstPost.css'
+import './css/Post.css'
+import './css/FirstPost.css'
 import Comments from './Comments'
 import Also from './Also'
 import Share from './Share'
@@ -24,6 +24,7 @@ class SinglePost extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ data })
+        console.log(data)
       });
   }
   render() {
