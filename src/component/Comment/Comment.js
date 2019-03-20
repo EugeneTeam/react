@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import '../css/Comment.css'
 import CommentList from "./CommentList";
 
@@ -20,7 +20,7 @@ export default class Comment extends React.Component {
             <div>
                 <div className='comment'>
                     <div className='avatar'>
-                        <img src={avatarAuthor} className='avatar'/>
+                        <img src={avatarAuthor} alt='' className='avatar'/>
                     </div>
                     <div className='cont'>
                         <div className='name'>{nameAuthor}</div>

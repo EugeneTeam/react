@@ -1,19 +1,16 @@
-import React, { Component } from 'react'
-import Menu from './Menu'
+import React from 'react'
+import Menu from './main/Menu'
 import './css/Post.css'
 import './css/FirstPost.css'
 import Comments from './Comments'
 import Also from './Also'
 import Share from './Share'
 class SinglePost extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: null,
-      name: null
-    };
-  }
-
+  state = {
+    data: null,
+    name: null
+  };
+  
   componentWillMount() {
     let postId = this.props.match.params.id;
     fetch(`http://localhost:4000/article/${postId}`, {
@@ -35,10 +32,10 @@ class SinglePost extends React.Component {
     )
     return (
       <div>
-        <Menu></Menu>
-        <img src={this.state.data.imageUrl} className='fimage'></img>
+        <Menu/>
+        <img src={this.state.data.imageUrl} alt='' className='fimage'/>
         <div className='mar'>
-          <div className='ftype'>{(this.state.data.category[0].name).toUpperCase()}</div>
+          <div className='ftype'>{(this.state.data.category.name).toUpperCase()}</div>
           <div className='ftitle'>{this.state.data.title}</div>
           <div className='ftext'>{this.state.data.text}</div>
         </div>

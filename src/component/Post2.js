@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './css/Post.css'
-import Footer from './Footer'
 
 class Post2 extends React.Component {
    render() {
       return(
          <div>
-            <img src={this.props.image} className='image'></img>
+            <img src={this.props.image} alt='' className='image'></img>
             <div>
                <div className='type'>{this.props.name.toUpperCase()}</div>
                <a href={'/article/' + this.props.id}><div className='title'>{this.props.title}</div></a>

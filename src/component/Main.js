@@ -1,18 +1,14 @@
-import React,{Component} from 'react'
+import React from 'react'
 import './css/Main.css'
-import FirstPost from './FirstPost'
 import './css/FirstPost.css'
-import Post from './Post'
-import Menu from './Menu'
-import SingUp from './SignUp'
-import Footer from './Footer'
+import Menu from './main/Menu'
+import Footer from './main/Footer'
 class Main extends React.Component {
-
     render() {
-        return(
+        return (
             <div className='wrapper'>
-                <Menu />
-                <div className='content'></div>
+                <Menu location={this.props} />
+                <div className='content' />
                 <Footer />
             </div>
         )
