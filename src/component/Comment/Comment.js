@@ -16,6 +16,7 @@ export default class Comment extends React.Component {
             id,
             comments
         } = this.props;
+        console.log(comments)
         return (
             <div>
                 <div className='comment'>
@@ -25,7 +26,7 @@ export default class Comment extends React.Component {
                     <div className='cont'>
                         <div className='name'>{nameAuthor}</div>
                         <div className='time'>
-                            {createdAt.split('T')[0]},{createdAt.split('T')[1].split('.')[0]}
+                            {/* {createdAt.split('T')[0]},{createdAt.split('T')[1].split('.')[0]} */}
                         </div>
                         <div>
                             {message}

@@ -7,6 +7,7 @@ class CommentsList extends React.Component {
         const mar = {
             marginLeft: '50px'
         };
+        // console.log(comments)
         return(<div style={mar}>
                 {comments.map(comment => (
                     <Comment
@@ -17,7 +18,7 @@ class CommentsList extends React.Component {
                         createdAt={comment.createdAt}
                         message={comment.message}
                         id={comment.id}
-                        comments={comment.Comment}
+                        comments={comment.Comments}
                         parent = {comment.parentId}
                         changeParentComment={this.props.changeParentComment}
                     />

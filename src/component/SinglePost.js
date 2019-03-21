@@ -15,13 +15,11 @@ class SinglePost extends React.Component {
     let postId = this.props.match.params.id;
     fetch(`http://localhost:4000/article/${postId}`, {
       method: 'GET',
-      headers: new Headers(),
-      mode: 'cors'
+      headers: new Headers()
     })
       .then(response => response.json())
       .then(data => {
         this.setState({ data })
-        console.log(data)
       });
   }
   render() {
@@ -35,7 +33,7 @@ class SinglePost extends React.Component {
         <Menu/>
         <img src={this.state.data.imageUrl} alt='' className='fimage'/>
         <div className='mar'>
-          <div className='ftype'>{(this.state.data.category.name).toUpperCase()}</div>
+          <div className='ftype'>{this.state.data["Category.name"].toUpperCase()}</div>
           <div className='ftitle'>{this.state.data.title}</div>
           <div className='ftext'>{this.state.data.text}</div>
         </div>

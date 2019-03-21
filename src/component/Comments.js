@@ -14,13 +14,11 @@ class Comments extends React.Component {
     componentWillMount() {
         fetch(`http://localhost:4000/article/${this.props.index}`, {
             method: 'GET',
-            headers: new Headers(),
-            mode: 'cors'
+            headers: new Headers()
         })
             .then(response => response.json())
             .then(data => {
                 this.setState({ data })
-                console.log(data)
             });
     }
     changeParentComment = (id, name) => {
@@ -35,14 +33,13 @@ class Comments extends React.Component {
                 <h1>Loading...</h1>
             </div>
         )
-        console.log(`parent = ${this.state.parentComment}`)
         return (
             <div>
                 <div className='separator1'></div>
-                <CommentList
-                    comments={this.state.data.Comment}
+                {(this.state.data.Comments !== undefined)?<CommentList
+                    comments={this.state.data.Comments}
                     index={this.props.index}
-                    changeParentComment={this.changeParentComment} />
+                    changeParentComment={this.changeParentComment} />:null}
                 <CommentForm
                     index={this.props.index}
                     parent={this.state.parentComment}
