@@ -12,6 +12,7 @@ class Comments extends React.Component {
         }
     }
     componentWillMount() {
+        //console.log(`http://localhost:4000/article/${this.props.index}`)
         fetch(`http://localhost:4000/article/${this.props.index}`, {
             method: 'GET',
             headers: new Headers()

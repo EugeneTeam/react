@@ -6,58 +6,61 @@ import Footer from './main/Footer'
 import uniqid from 'uniqid'
 class CategoryPost extends React.Component {
     state = {
-        data: null
+        data: null,
+        haveError: false
     };
-    haveError = false;
 
     componentWillMount() {
         fetch(`http://localhost:4000/category/${this.props.match.params.id}`, {
             method: 'GET',
             headers: new Headers()
         }).then(response => {
-            console.log(response)
             if (!response.ok) {
+                this.setState({ haveError: true })
                 throw Error(response.statusText)
+            } else {
+                return response.json()
             }
-        }).then(response => { response.json() })
-            .then(data => { this.setState({ data }) })
-            .catch(e => { console.log(e) })
-
+        }).then(data => {
+            this.setState({ data })
+        }).catch(e => {
+            console.log(e);
+        })
     }
     render() {
-        if (this.haveError) return (
+        if (this.state.haveError) return (
             <div>
-                Server Error
+                <h1>Server Have Error</h1>
             </div>
         )
-        // if (this.state.data != null) return (
-        //     <div>
-        //         <h1>Loading...</h1>
-        //     </div>
-        // )
-        // const posts = this.state.data.Articles.map((n) => {
-        //     return (
-        //         <div key={uniqid()}>
-        //             <Post2
-        //                 key={n.id}
-        //                 image={n.imageUrl}
-        //                 name={this.state.data.name}
-        //                 id={n.id}
-        //                 text={n.text}
-        //                 title={n.title} />
-        //             <div className='separ'></div>
-        //         </div>
-        //     )
-        // });
-        // return (
-        //     <div>
-        //         <Menu location={this.props.location} />
-        //         <div className='center'>
-        //             {posts}
-        //         </div>
-        //         <Footer />
-        //     </div>
-        // )
+        if (this.state.data === null) return (
+            <div>
+                <h1>Loading...</h1>
+            </div>
+        )
+        const posts = this.state.data.Articles.map((n) => {
+            return (
+                <div key={uniqid()}>
+                    <Post2
+                        key={n.id}
+                        image={n.imageUrl}
+                        name={this.state.data.name}
+                        id={n.id}
+                        text={n.text}
+                        title={n.title} />
+                    <div className='separ'></div>
+                </div>
+            )
+        });
+        return (
+            <div>
+                <Menu location={this.props.location} />
+                <div className='center'>
+                    {posts}
+                </div>
+                <Footer />
+            </div>
+        )
     }
 }
 

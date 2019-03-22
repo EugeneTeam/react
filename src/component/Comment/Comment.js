@@ -11,23 +11,18 @@ export default class Comment extends React.Component {
             index,
             avatarAuthor,
             nameAuthor,
-            createdAt,
             message,
             id,
             comments
         } = this.props;
-        console.log(comments)
         return (
             <div>
                 <div className='comment'>
                     <div className='avatar'>
-                        <img src={avatarAuthor} alt='' className='avatar'/>
+                        <img src={avatarAuthor} alt='' className='avatar' />
                     </div>
                     <div className='cont'>
                         <div className='name'>{nameAuthor}</div>
-                        <div className='time'>
-                            {/* {createdAt.split('T')[0]},{createdAt.split('T')[1].split('.')[0]} */}
-                        </div>
                         <div>
                             {message}
                         </div>
@@ -40,12 +35,12 @@ export default class Comment extends React.Component {
                         </div>
                     </div>
                 </div>
-                {comments? (
+                {comments ? (
                     <div className='child-comment'>
                         <CommentList
                             comments={comments}
                             index={index}
-                            changeParentComment={this.props.changeParentComment}/>
+                            changeParentComment={this.props.changeParentComment} />
                     </div>
                 ) : null}
             </div>

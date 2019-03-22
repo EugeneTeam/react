@@ -9,7 +9,6 @@ class CommentForm extends React.Component {
   }
   componentWillMount() {
     this.id = this.props.index;
-    console.log(this.props)
   }
   render() {
     return (
@@ -73,6 +72,7 @@ class CommentForm extends React.Component {
                 body: JSON.stringify(values, null, 2)
               });
               setSubmitting(false);
+              window.location.reload();
             }, 500);
           }}>
           {({ isSubmitting }) => (
