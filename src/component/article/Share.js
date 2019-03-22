@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/Main.css'
+import '../css/Main.css'
 class Share extends React.Component {
     render() {
         return(

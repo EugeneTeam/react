@@ -1,8 +1,8 @@
 import React from 'react'
-import Menu from './main/Menu'
-import './css/Post.css'
-import './css/FirstPost.css'
-import Comments from './Comments'
+import Menu from '../main/Menu'
+import '../css/Post.css'
+import '../css/FirstPost.css'
+import Comments from '../Comments'
 import Also from './Also'
 import Share from './Share'
 class SinglePost extends React.Component {

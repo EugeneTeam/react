@@ -9,10 +9,10 @@ class Menu extends React.Component {
                 <div className="logo">MINIMĂØ</div>
                 <div className="menu">
                     <ul>
-                        <li><NavLink to="/category/1">Lifestyle</NavLink></li>
-                        <li><NavLink to="/category/2">Photodiary</NavLink></li>
-                        <li><NavLink to="/category/3">Music</NavLink></li>
-                        <li><NavLink to="/category/4">Travel</NavLink></li>
+                        <li><NavLink to={"/category/1"}>Lifestyle</NavLink></li>
+                        <li><NavLink to={"/category/2"}>Photodiary</NavLink></li>
+                        <li><NavLink to={"/category/3"}>Music</NavLink></li>
+                        <li><NavLink to={"/category/4"}>Travel</NavLink></li>
                     </ul>
                 </div>
             </div>

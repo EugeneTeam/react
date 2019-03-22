@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Main from './component/Main'
-import SinglePost from './component/SinglePost';
+import SinglePost from './component/article/SinglePost';
 import CategoryPost from './component/CategoryPost';
 import NotFound from './component/NotFound'
 import './component/css/Main.css'
