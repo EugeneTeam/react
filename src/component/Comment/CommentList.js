@@ -1,13 +1,12 @@
 import React from 'react'
-import '../css/Comment.css'
 import Comment from './Comment'
+import '../css/Comment.css'
 class CommentsList extends React.Component {
     render() {
         const {comments, index} = this.props;
         const mar = {
             marginLeft: '50px'
         };
-        // console.log(comments)
         return(<div style={mar}>
                 {comments.map(comment => (
                     <Comment
@@ -27,5 +26,4 @@ class CommentsList extends React.Component {
         )
     }
 }
-
 export default CommentsList;

@@ -1,23 +1,20 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 class Menu extends React.Component {
-    
     render() {
         return (
             <div className="top">
                 <div className="logo">MINIMĂØ</div>
                 <div className="menu">
                     <ul>
-                        <li><NavLink to={"/category/1"}>Lifestyle</NavLink></li>
-                        <li><NavLink to={"/category/2"}>Photodiary</NavLink></li>
-                        <li><NavLink to={"/category/3"}>Music</NavLink></li>
-                        <li><NavLink to={"/category/4"}>Travel</NavLink></li>
+                        <li><Link to="/category/1">Lifestyle</Link></li>
+                        <li><Link to="/category/2">Photodiary</Link></li>
+                        <li><Link to="/category/3">Music</Link></li>
+                        <li><Link to="/category/4">Travel</Link></li>
                     </ul>
                 </div>
             </div>
         )
     }
 }
-
 export default Menu;

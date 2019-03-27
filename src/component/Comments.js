@@ -12,7 +12,6 @@ class Comments extends React.Component {
         }
     }
     componentWillMount() {
-        //console.log(`http://localhost:4000/article/${this.props.index}`)
         fetch(`http://localhost:4000/article/${this.props.index}`, {
             method: 'GET',
             headers: new Headers()
@@ -37,10 +36,10 @@ class Comments extends React.Component {
         return (
             <div>
                 <div className='separator1'></div>
-                {(this.state.data.Comments !== undefined)?<CommentList
+                {(this.state.data.Comments !== undefined) ? <CommentList
                     comments={this.state.data.Comments}
                     index={this.props.index}
-                    changeParentComment={this.changeParentComment} />:null}
+                    changeParentComment={this.changeParentComment} /> : null}
                 <CommentForm
                     index={this.props.index}
                     parent={this.state.parentComment}
@@ -49,5 +48,4 @@ class Comments extends React.Component {
         )
     }
 }
-
 export default Comments;

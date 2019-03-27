@@ -10,9 +10,14 @@ class SinglePost extends React.Component {
     data: null,
     haveError: false
   };
-
+  componentWillReceiveProps(props) {
+    this.getData(props);
+  }
   componentWillMount() {
-    let postId = this.props.match.params.id;
+    this.getData(this.props)
+  }
+  getData(props) {
+    let postId = props.match.params.id;
     fetch(`http://localhost:4000/article/${postId}`, {
       method: 'GET',
       headers: new Headers()
@@ -36,7 +41,6 @@ class SinglePost extends React.Component {
         <h1>Server Have Error</h1>
       </div>
     )
-    
     if (!this.state.data) return (
       <div>
         <h1>Loading...</h1>

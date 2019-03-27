@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Link } from 'react-router-dom'
 import '../css/Comment.css'
-
 class CommentForm extends React.Component {
   constructor() {
     super();
@@ -14,7 +14,12 @@ class CommentForm extends React.Component {
     return (
       <div>
         <div id='main-form' className='answer-name'>
-          {this.props.name ? "Reply to " + this.props.name : ""}
+          {this.props.name !== null ? "Reply to " + this.props.name : ""}
+          {this.props.name !== null ?
+            <Link onClick={() => {
+              this.props.name = null
+            }} style={{ fontSize: 15 }}>   close</Link> : ""
+          }
         </div>
         <Formik
           initialValues={{
@@ -46,21 +51,16 @@ class CommentForm extends React.Component {
             }
             return errors;
           }}
-
           onSubmit={(values, { setSubmitting }) => {
-
             values.articleId = this.props.index;
             values.parent = this.props.parent;
-
             let form = document.forms[0];
             let input = form.elements.group1;
-
             input.forEach(n => {
               if (n.checked) {
                 values.avatar = n.value;
               }
             });
-
             setTimeout(() => {
               fetch(`http://localhost:4000/comment`, {
                 method: 'POST',
@@ -80,10 +80,10 @@ class CommentForm extends React.Component {
               <div className='main'>
                 <ErrorMessage name="email" component="div" id='error' />
                 <Field type="email" name="email" placeholder='E-Mail address' />
-                <br></br>
+                <br />
                 <ErrorMessage name="name" component="div" id='error' />
                 <Field type="text" name="name" placeholder='Author name' />
-                <br></br>
+                <br />
                 <ErrorMessage name="text" component="div" id='error' />
                 <Field type='text' name='text' placeholder='Message text' />
                 <div>
@@ -91,37 +91,37 @@ class CommentForm extends React.Component {
                     <label>
                       <img src='/image/avatar/1.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/1.png' name="group1" />
-                      <label></label>
+                      <label />
                     </label>
                     <label>
                       <img src='/image/avatar/2.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/2.png' name="group1" />
-                      <label></label>
+                      <label />
                     </label>
                     <label>
                       <img src='/image/avatar/3.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/3.png' name="group1" />
-                      <label></label>
+                      <label />
                     </label>
-                    <br></br>
+                    <br />
                     <label>
                       <img src='/image/avatar/4.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/4.png' name="group1" />
-                      <label></label>
+                      <label />
                     </label>
                     <label>
                       <img src='/image/avatar/5.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/5.png' name="group1" />
-                      <label></label>
+                      <label />
                     </label>
                     <label>
                       <img src='/image/avatar/6.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/6.png' name="group1" />
-                      <label></label>
+                      <label />
                     </label>
                   </fieldset>
                 </div>
-                <br></br>
+                <br />
                 <button type="submit" disabled={isSubmitting}>Submit</button>
               </div>
             </Form>
@@ -131,5 +131,4 @@ class CommentForm extends React.Component {
     )
   }
 }
-
 export default CommentForm;

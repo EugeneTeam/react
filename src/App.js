@@ -5,7 +5,6 @@ import SinglePost from './component/article/SinglePost';
 import CategoryPost from './component/CategoryPost';
 import NotFound from './component/NotFound'
 import './component/css/Main.css'
-
 class App extends React.Component {
     render() {
         return (
@@ -20,5 +19,4 @@ class App extends React.Component {
         )
     }
 }
-
 export default App;

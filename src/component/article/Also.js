@@ -7,10 +7,14 @@ class Also extends React.Component {
             data: null
         };
     }
-
+    componentWillReceiveProps(props) {
+        this.getData(props)
+    }
     componentWillMount() {
-        let postId = this.props.index;
-        fetch(`http://localhost:4000/category/${postId}`, {
+        this.getData(this.props)
+    }
+    getData(props) {
+        fetch(`http://localhost:4000/category/${props.index}`, {
             method: 'GET',
             headers: new Headers(),
             mode: 'cors'
@@ -75,5 +79,4 @@ class Also extends React.Component {
         )
     }
 }
-
 export default Also;

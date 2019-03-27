@@ -7,12 +7,11 @@ class Main extends React.Component {
     render() {
         return (
             <div className='wrapper'>
-                <Menu location={this.props} />
+                <Menu />
                 <div className='content' />
                 <Footer />
             </div>
         )
     }
 }
-
 export default Main;

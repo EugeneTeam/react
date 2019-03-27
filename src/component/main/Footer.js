@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../css/Main.css'
 class Footer extends React.Component {
     render() {
@@ -9,13 +10,12 @@ class Footer extends React.Component {
                 </div>
                 <div className="footer-right">
                     <div className="follow">Follow</div>
-                    <a href="https://www.instagram.com"><div className="instagram"></div></a>
-                    <a href="https://uk-ua.facebook.com"><div className="facebook"></div></a>
-                    <a href="https://twitter.com"><div className="twitter"></div></a>
+                    <Link to="https://www.instagram.com"><div className="instagram"></div></Link>
+                    <Link to="https://uk-ua.facebook.com"><div className="facebook"></div></Link>
+                    <Link to="https://twitter.com"><div className="twitter"></div></Link>
                 </div>
             </div>
         )
     }
 }
-
 export default Footer;

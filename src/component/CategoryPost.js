@@ -1,17 +1,21 @@
 import React from 'react'
 import Menu from './main/Menu'
-import Post2 from './Post2';
-import './css/Main.css'
+import Post2 from './Post2'
 import Footer from './main/Footer'
-import uniqid from 'uniqid'
+import './css/Main.css'
 class CategoryPost extends React.Component {
     state = {
         data: null,
         haveError: false
     };
-
+    componentWillReceiveProps(props) {
+        this.getData(props);
+    }
     componentWillMount() {
-        fetch(`http://localhost:4000/category/${this.props.match.params.id}`, {
+        this.getData(this.props);
+    }
+    getData(props) {
+        fetch(`http://localhost:4000/category/${props.match.params.id}`, {
             method: 'GET',
             headers: new Headers()
         }).then(response => {
@@ -40,7 +44,7 @@ class CategoryPost extends React.Component {
         )
         const posts = this.state.data.Articles.map((n) => {
             return (
-                <div key={uniqid()}>
+                <div key={n.id}>
                     <Post2
                         key={n.id}
                         image={n.imageUrl}
@@ -48,13 +52,13 @@ class CategoryPost extends React.Component {
                         id={n.id}
                         text={n.text}
                         title={n.title} />
-                    <div className='separ'></div>
+                    <div className='separ' />
                 </div>
             )
         });
         return (
             <div>
-                <Menu location={this.props.location} />
+                <Menu />
                 <div className='center'>
                     {posts}
                 </div>
@@ -63,5 +67,4 @@ class CategoryPost extends React.Component {
         )
     }
 }
-
 export default CategoryPost;

@@ -1,39 +1,35 @@
-import React, {Component} from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import './css/Post.css'
-
 class Post extends React.Component {
-   constructor() {
-      super();
-      this.state = {
-        data: null
-      };
-    }
-    componentWillMount() {
+   state = {
+      data: null
+   };
+   componentWillMount() {
       fetch(`http://localhost:4000/article/${this.props.index}`, {
          method: 'GET',
          headers: new Headers(),
          mode: 'cors'
       })
-        .then(response => response.json())
-        .then(data => {this.setState({ data })
-      });
-    }
-
+         .then(response => response.json())
+         .then(data => {
+            this.setState({ data })
+         });
+   }
    render() {
-      if(!this.state.data) return (
+      if (!this.state.data) return (
          <div>
             <h1>Loading...</h1>
          </div>
       )
-      return(
+      return (
          <div>
-            <img src={this.state.data.imageUrl} alt='' className='image'></img>
+            <img src={this.state.data.imageUrl} alt='' className='image' />
             <div className='type'>{this.state.data.category[0].name.toUpperCase()}</div>
-            <a href={'article/' + this.state.data.id}><div className='title'>{this.state.data.title}</div></a>
+            <Link to={'article/' + this.state.data.id}><div className='title'>{this.state.data.title}</div></Link>
             <div className='text'>{this.state.data.text}</div>
          </div>
       )
    }
 }
-
 export default Post;

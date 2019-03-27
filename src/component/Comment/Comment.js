@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../css/Comment.css'
 import CommentList from "./CommentList";
-
 export default class Comment extends React.Component {
     handleClick = (id, name) => () => {
         this.props.changeParentComment(id, name);
@@ -28,9 +28,9 @@ export default class Comment extends React.Component {
                         </div>
                         <div className='reply'>
                             <label>
-                                <a href='#main-form' onClick={this.handleClick(id, nameAuthor)}>
+                                <Link to='#main-form' onClick={this.handleClick(id, nameAuthor)}>
                                     Answer {nameAuthor}
-                                </a>
+                                </Link>
                             </label>
                         </div>
                     </div>

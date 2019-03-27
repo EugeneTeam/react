@@ -22,7 +22,6 @@
     font-size: 30px;
     margin-right: 360px;
 }
-
 .menu > ul > li:nth-child(2) {
     margin-left: 100px;
     margin-right: 100px;
@@ -96,14 +95,12 @@
     border-width: 0px 0px 1px 0px;
     background: white;
 }
-
 .footer-right {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-right: 70px;
 }
-
 .footer-left {
     margin-left: 150px;
 }
@@ -170,4 +167,20 @@ html {
 }
 .share > a {
     color: gray
+}
+.add-form > form {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+.add-form > form > input:nth-child(2){
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.add-form > form > textarea {
+    height: 300px;
+}
+.add-form {
+    display: flex;
+    justify-content: center;
 }
