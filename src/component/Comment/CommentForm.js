@@ -1,24 +1,22 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Link } from 'react-router-dom'
 import '../css/Comment.css'
 class CommentForm extends React.Component {
-  constructor() {
-    super();
-    this.id = null;
-  }
+  id = null;
   componentWillMount() {
     this.id = this.props.index;
+  }
+  handleClick = (id, name) => () => {
+    this.props.changeParentComment(id, name);
   }
   render() {
     return (
       <div>
         <div id='main-form' className='answer-name'>
-          {this.props.name !== null ? "Reply to " + this.props.name : ""}
+          {this.props.name !== null ? "Reply to " + this.props.name : null}
           {this.props.name !== null ?
-            <Link onClick={() => {
-              this.props.name = null
-            }} style={{ fontSize: 15 }}>   close</Link> : ""
+            <button style={{ fontSize: 10 }} onClick={this.handleClick(null, null)}>   Cancel</button>
+            : null
           }
         </div>
         <Formik
@@ -70,13 +68,25 @@ class CommentForm extends React.Component {
                 },
                 mode: 'cors',
                 body: JSON.stringify(values, null, 2)
-              });
+              }).then(() => {
+                fetch(`http://localhost:4000/article/${this.props.index}`, {
+                  method: 'GET',
+                  headers: new Headers()
+                })
+                  .then(response => response.json())
+                  .then(data => {
+                    this.props.changeData(data);
+                    document.getElementById('reset').reset();
+                    this.props.changeParentComment(null, null);
+                  });
+              }).catch(e => {
+                console.log(e);
+              })
               setSubmitting(false);
-              window.location.reload();
             }, 500);
           }}>
           {({ isSubmitting }) => (
-            <Form>
+            <Form id='reset'>
               <div className='main'>
                 <ErrorMessage name="email" component="div" id='error' />
                 <Field type="email" name="email" placeholder='E-Mail address' />

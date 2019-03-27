@@ -21,6 +21,11 @@ class Comments extends React.Component {
                 this.setState({ data })
             });
     }
+    changeData = value => {
+        this.setState({
+            data: value
+        })
+    }
     changeParentComment = (id, name) => {
         this.setState({
             parentComment: id,
@@ -43,7 +48,9 @@ class Comments extends React.Component {
                 <CommentForm
                     index={this.props.index}
                     parent={this.state.parentComment}
-                    name={this.state.parentName} />
+                    name={this.state.parentName}
+                    changeParentComment={this.changeParentComment}
+                    changeData={this.changeData} />
             </div>
         )
     }
