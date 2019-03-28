@@ -51,9 +51,15 @@ class SinglePost extends React.Component {
         <Menu />
         <img src={this.state.data.imageUrl} alt='' className='fimage' />
         <div className='mar'>
-          <div className='ftype'>{this.state.data["Category.name"].toUpperCase()}</div>
-          <div className='ftitle'>{this.state.data.title}</div>
-          <div className='ftext'>{this.state.data.text}</div>
+          <div className='ftype'>
+            {this.state.data["Category.name"].toUpperCase()}
+          </div>
+          <div className='ftitle'>
+            {this.state.data.title}
+          </div>
+          <div className='ftext'>
+            {this.state.data.text}
+          </div>
         </div>
         <Share />
         <Also index={this.state.data.categoryId} />
