@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import '../css/Main.css'
 class Share extends React.Component {
     render() {
@@ -7,10 +6,10 @@ class Share extends React.Component {
             <div>
                 <div className='share'>
                     Share
-                    <Link to='https://www.facebook.com'><div>FB</div></Link>
-                    <Link to='https://www.twitter.com'><div>Tw</div></Link>
-                    <Link to='https://plus.google.com/discover'><div>G+</div></Link>
-                    <Link to='https://www.pinterest.com'><div>@</div></Link>
+                    <a href='https://www.facebook.com'><div>FB</div></a>
+                    <a href='https://www.twitter.com'><div>Tw</div></a>
+                    <a href='https://plus.google.com/discover'><div>G+</div></a>
+                    <a href='https://www.pinterest.com'><div>@</div></a>
                 </div>
             </div>
         )

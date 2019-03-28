@@ -101,33 +101,33 @@ class CommentForm extends React.Component {
                     <label>
                       <img src='/image/avatar/1.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/1.png' name="group1" />
-                      <label />
+                      <label></label>
                     </label>
                     <label>
                       <img src='/image/avatar/2.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/2.png' name="group1" />
-                      <label />
+                      <label></label>
                     </label>
                     <label>
                       <img src='/image/avatar/3.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/3.png' name="group1" />
-                      <label />
+                      <label></label>
                     </label>
                     <br />
                     <label>
                       <img src='/image/avatar/4.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/4.png' name="group1" />
-                      <label />
+                      <label></label>
                     </label>
                     <label>
                       <img src='/image/avatar/5.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/5.png' name="group1" />
-                      <label />
+                      <label></label>
                     </label>
                     <label>
                       <img src='/image/avatar/6.png' alt='' className='image' />
                       <Field type='radio' value='/image/avatar/6.png' name="group1" />
-                      <label />
+                      <label></label>
                     </label>
                   </fieldset>
                 </div>

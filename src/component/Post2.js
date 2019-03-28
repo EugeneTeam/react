@@ -5,11 +5,19 @@ class Post2 extends React.Component {
    render() {
       return (
          <div>
-            <img src={this.props.image} alt='' className='image'></img>
+            <img src={this.props.image} alt='' className='image' />
             <div>
-               <div className='type'>{this.props.name.toUpperCase()}</div>
-               <Link to={'/article/' + this.props.id}><div className='title'>{this.props.title}</div></Link>
-               <div className='text'>{this.props.text}</div>
+               <div className='type'>
+                  {this.props.name.toUpperCase()}
+               </div>
+               <Link to={'/article/' + this.props.id}>
+                  <div className='title'>
+                     {this.props.title}
+                  </div>
+               </Link>
+               <div className='text'>
+                  {this.props.text}
+               </div>
             </div>
          </div>
       )

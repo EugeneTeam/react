@@ -25,9 +25,17 @@ class Post extends React.Component {
       return (
          <div>
             <img src={this.state.data.imageUrl} alt='' className='image' />
-            <div className='type'>{this.state.data.category[0].name.toUpperCase()}</div>
-            <Link to={'article/' + this.state.data.id}><div className='title'>{this.state.data.title}</div></Link>
-            <div className='text'>{this.state.data.text}</div>
+            <div className='type'>
+               {this.state.data.category[0].name.toUpperCase()}
+            </div>
+            <Link to={'article/' + this.state.data.id}>
+               <div className='title'>
+                  {this.state.data.title}
+               </div>
+            </Link>
+            <div className='text'>
+               {this.state.data.text}
+            </div>
          </div>
       )
    }

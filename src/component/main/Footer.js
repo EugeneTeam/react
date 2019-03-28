@@ -10,9 +10,15 @@ class Footer extends React.Component {
                 </div>
                 <div className="footer-right">
                     <div className="follow">Follow</div>
-                    <Link to="https://www.instagram.com"><div className="instagram"></div></Link>
-                    <Link to="https://uk-ua.facebook.com"><div className="facebook"></div></Link>
-                    <Link to="https://twitter.com"><div className="twitter"></div></Link>
+                    <Link to="https://www.instagram.com">
+                        <div className="instagram" />
+                    </Link>
+                    <Link to="https://uk-ua.facebook.com">
+                        <div className="facebook" />
+                    </Link>
+                    <Link to="https://twitter.com">
+                        <div className="twitter" />
+                    </Link>
                 </div>
             </div>
         )
